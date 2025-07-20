@@ -1,0 +1,51 @@
+
+@font-face {
+  font-family: 'CrimsonProVariable';
+  src: url('./assets/fonts/CrimsonPro-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GeneralSansVariable';
+  src: url('./assets/fonts/GeneralSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body {
+  font-family: 'GeneralSansVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  padding: 1rem 2rem;
+  background-color: #161616;
+  color: #f0f0f0;
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.app-header h1 {
+  font-family: 'CrimsonProVariable', serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.app-header .subtitle {
+  font-family: 'GeneralSansVariable', sans-serif;
+  font-size: 0.8rem;
+  color: #b0b0b0;
+}
+
+
+.benchmark-group {
+  display: flex;
+  flex-direction: column;
+}
+.benchmark-group .file-info {
+  font-size: 0.8rem;
+  margin: 0;
+}
