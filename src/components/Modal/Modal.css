@@ -1,0 +1,130 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: #242424;
+    border: 1px solid #404040;
+    border-radius: 8px;
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    border-bottom: 1px solid #404040;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.modal-header h2 {
+    font-family: 'CrimsonProVariable', serif;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #f0f0f0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #b0b0b0;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-close:hover {
+    background-color: #404040;
+    color: #f0f0f0;
+}
+
+.modal-body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: block;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #f0f0f0;
+    margin-bottom: 0.5rem;
+}
+
+.form-select,
+.form-input {
+    padding: 0.75rem;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    background-color: #161616;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    color: #f0f0f0;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.form-input {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.form-select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: #606060;
+}
+
+.form-select option {
+    background-color: #161616;
+    color: #f0f0f0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #404040;
+}
+
+.button-secondary {
+    background-color: #404040;
+    color: #f0f0f0;
+}
+
+.button-secondary:hover {
+    background-color: #505050;
+}
+
+.button-secondary:active {
+    background-color: #2c2c2c;
+}

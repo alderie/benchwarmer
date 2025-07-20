@@ -1,17 +1,25 @@
 import { createRoot } from 'react-dom/client';
 import { Button } from './components/Button';
+import { AddLLMModal } from './components/AddLLMModal';
 import { useState } from 'react';
 import type { FileData } from './types/electron-api';
+import { Provider } from './components/Provider';
 
 const App = () => {
 
     const [selectedFile, setSelectedFile] = useState<FileData | null>(null);
-
+    const [isAddLLMModalOpen, setIsAddLLMModalOpen] = useState(false);
+    const [llmProviders, setLlmProviders] = useState<Array<{ provider: string, apiKey: string }>>([]);
 
     const openFilePicker = async () => {
         const file = await window.electronAPI.openFile();
         console.log('Selected file:', file);
         setSelectedFile(file);
+    }
+
+    const handleAddLLM = (provider: string, apiKey: string) => {
+        setLlmProviders(prev => [...prev, { provider, apiKey }]);
+        console.log('Added LLM provider:', provider);
     }
 
     return (
@@ -22,9 +30,14 @@ const App = () => {
                     <p className='subtitle'>Automated benchmark suite for LLM APIs</p>
                 </div>
                 <div className='benchmark-group'>
-                    <Button onClick={openFilePicker}>
-                        {selectedFile ? <>{selectedFile.name}</> : <>Import Benchmark File <span className='subtext' style={{ marginLeft: 5 }}>(accepts .json, .jsonl, .txt, .csv, .parquet)</span></>}
-                    </Button>
+                    <div className='button-row'>
+                        <Button onClick={openFilePicker}>
+                            {selectedFile ? <>{selectedFile.name}</> : <>Import Benchmark File <span className='subtext' style={{ marginLeft: 5 }}>(accepts .json, .jsonl, .txt, .csv, .parquet)</span></>}
+                        </Button>
+                        <Button onClick={() => setIsAddLLMModalOpen(true)}>
+                            Add LLM
+                        </Button>
+                    </div>
                     {selectedFile && (
                         <div className='file-info'>
                             <p>Path: {selectedFile.path}</p>
@@ -33,6 +46,20 @@ const App = () => {
                     )}
                 </div>
             </div>
+            <div className='app-content'>
+                {llmProviders.length > 0 ? (
+                    llmProviders.map((provider, index) => (
+                        <Provider key={index} name={provider.provider} className='llm-provider'/>
+                    ))
+                ) : (
+                    <h4 className='app-splash'>No LLM Providers Configured</h4>
+                )}
+            </div>
+            <AddLLMModal
+                isOpen={isAddLLMModalOpen}
+                onClose={() => setIsAddLLMModalOpen(false)}
+                onAdd={handleAddLLM}
+            />
         </div>
     );
 }

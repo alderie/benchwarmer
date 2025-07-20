@@ -1,0 +1,73 @@
+.provider {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: solid 1px #404040;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    background-color: #1e1e1e;
+    transition: border-color 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.provider:hover {
+    border-color: #606060;
+}
+
+.provider-header {
+    padding: 1rem 1rem 0.4rem 1rem;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.provider-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.provider-name {
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #f0f0f0;
+}
+
+.api-key {
+    margin-left: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    color: #8f8f8f;
+    background-color: #161616;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #404040;
+}
+
+.model-selection {
+    padding: 0.5rem 1rem;
+    background-color: #161616;
+}
+
+.model-list {
+    outline: none;
+    padding: 0.4rem 0.4rem;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    background-color: #161616;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    color: #f0f0f0;
+    transition: border-color 0.2s ease-in-out;
+}
+.model-item {
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
