@@ -1,4 +1,5 @@
 import './Provider.css';
+import { useState } from 'react';
 
 // Import SVGs directly as modules
 import openaiIcon from '../../assets/icons/openai.png';
@@ -9,6 +10,7 @@ import cohereIcon from '../../assets/icons/cohere-color.png';
 import ollamaIcon from '../../assets/icons/ollama.png';
 import metaIcon from '../../assets/icons/meta-color.png';
 import { Button } from '../Button';
+import { AddModelModal, type Model } from '../AddModelModal';
 
 const ModelIcons: Record<string, string> = {
     openai: openaiIcon,
@@ -27,14 +29,29 @@ const ModelIcons: Record<string, string> = {
 export const Provider = ({
     name,
     className = '',
+    models = [],
+    onAddModel,
+    onRemoveModel,
 }: {
     name: string;
     className?: string;
+    models?: Model[];
+    onAddModel?: (model: Model) => void;
+    onRemoveModel?: (modelId: string) => void;
 }) => {
+    const [isAddModelModalOpen, setIsAddModelModalOpen] = useState(false);
     const iconSrc = ModelIcons[name.toLowerCase()];
     
     // Capitalize first letter of provider name for display
     const displayName = name.charAt(0).toUpperCase() + name.slice(1);
+    
+    const handleAddModel = (model: Model) => {
+        onAddModel?.(model);
+    };
+    
+    const handleRemoveModel = (modelId: string) => {
+        onRemoveModel?.(modelId);
+    };
     
     return (
         <div className={`provider ${className}`}>
@@ -48,17 +65,35 @@ export const Provider = ({
                 )}
                 <span className="provider-name">{displayName}</span>
                 <code className="api-key">API Key: ••••••••</code>
-                <Button onClick={() => {}}>Add Model</Button>
+                <Button onClick={() => setIsAddModelModalOpen(true)}>Add Model</Button>
             </div>
-            <div className='model-selection'>
-                <div className='model-item'>
-                    <select className='model-list'>
-                        <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
-                        <option value="gpt-4">gpt-4</option>
-                        <option value="gpt-4o">gpt-4o</option>
-                    </select>
+            
+            {models.length > 0 && (
+                <div className='provider-models'>
+                    <div className="models-list">
+                        {models.map((model) => (
+                            <div key={model.id} className="model-item">
+                                <span className="model-name">{model.name}</span>
+                                {model.reasoning && <span>reasoning</span> }
+                                <button 
+                                    className="model-remove-btn"
+                                    onClick={() => handleRemoveModel(model.id)}
+                                    title="Remove model"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
+            
+            <AddModelModal
+                isOpen={isAddModelModalOpen}
+                onClose={() => setIsAddModelModalOpen(false)}
+                provider={name}
+                onAdd={handleAddModel}
+            />
         </div>
     );
 }

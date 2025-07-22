@@ -4,12 +4,14 @@ import { AddLLMModal } from './components/AddLLMModal';
 import { useState } from 'react';
 import type { FileData } from './types/electron-api';
 import { Provider } from './components/Provider';
+import type { Model } from './components/AddModelModal';
 
 const App = () => {
 
     const [selectedFile, setSelectedFile] = useState<FileData | null>(null);
     const [isAddLLMModalOpen, setIsAddLLMModalOpen] = useState(false);
     const [llmProviders, setLlmProviders] = useState<Array<{ provider: string, apiKey: string }>>([]);
+    const [models, setModels] = useState<Model[]>([]);
 
     const openFilePicker = async () => {
         const file = await window.electronAPI.openFile();
@@ -20,6 +22,20 @@ const App = () => {
     const handleAddLLM = (provider: string, apiKey: string) => {
         setLlmProviders(prev => [...prev, { provider, apiKey }]);
         console.log('Added LLM provider:', provider);
+    }
+
+    const handleAddModel = (model: Model) => {
+        setModels(prev => [...prev, model]);
+        console.log('Added model:', model);
+    }
+
+    const handleRemoveModel = (modelId: string) => {
+        setModels(prev => prev.filter(model => model.id !== modelId));
+        console.log('Removed model:', modelId);
+    }
+
+    const getModelsForProvider = (providerName: string) => {
+        return models.filter(model => model.provider.toLowerCase() === providerName.toLowerCase());
     }
 
     return (
@@ -34,9 +50,6 @@ const App = () => {
                         <Button onClick={openFilePicker}>
                             {selectedFile ? <>{selectedFile.name}</> : <>Import Benchmark File <span className='subtext' style={{ marginLeft: 5 }}>(accepts .json, .jsonl, .txt, .csv, .parquet)</span></>}
                         </Button>
-                        <Button onClick={() => setIsAddLLMModalOpen(true)}>
-                            Add LLM
-                        </Button>
                     </div>
                     {selectedFile && (
                         <div className='file-info'>
@@ -47,13 +60,27 @@ const App = () => {
                 </div>
             </div>
             <div className='app-content'>
-                {llmProviders.length > 0 ? (
-                    llmProviders.map((provider, index) => (
-                        <Provider key={index} name={provider.provider} className='llm-provider'/>
-                    ))
-                ) : (
-                    <h4 className='app-splash'>No LLM Providers Configured</h4>
-                )}
+                <div className='content-header'>
+                    <Button onClick={() => setIsAddLLMModalOpen(true)}>
+                        Add LLM
+                    </Button>
+                </div>
+                <div className='llm-providers'>
+                    {llmProviders.length > 0 ? (
+                        llmProviders.map((provider, index) => (
+                            <Provider
+                                key={index}
+                                name={provider.provider}
+                                className='llm-provider'
+                                models={getModelsForProvider(provider.provider)}
+                                onAddModel={handleAddModel}
+                                onRemoveModel={handleRemoveModel}
+                            />
+                        ))
+                    ) : (
+                        <h4 className='app-splash'>No LLM Providers Configured</h4>
+                    )}
+                </div>
             </div>
             <AddLLMModal
                 isOpen={isAddLLMModalOpen}

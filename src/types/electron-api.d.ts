@@ -1,3 +1,5 @@
+import type { ModelData } from "../constants/models";
+
 export {};
 
 export interface FileData {
@@ -9,6 +11,7 @@ export interface FileData {
 declare global {
   interface Window {
     electronAPI: {
+      getSupportedModelsSync: () => ModelData;
       openFile: () => Promise<FileData | null>;
     };
   }

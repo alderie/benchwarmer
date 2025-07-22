@@ -4,5 +4,6 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('electronAPI', {
+  getSupportedModelsSync: () => ipcRenderer.sendSync('models:supported'),
   openFile: () => ipcRenderer.invoke('dialog:openFile')
 });
