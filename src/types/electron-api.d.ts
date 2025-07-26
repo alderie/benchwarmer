@@ -1,3 +1,4 @@
+import { Dataset } from "../utils/datasets";
 import type { ModelData } from "../constants/models";
 
 export {};
@@ -13,6 +14,7 @@ declare global {
     electronAPI: {
       getSupportedModelsSync: () => ModelData;
       openFile: () => Promise<FileData | null>;
+      searchDatasets: (query: string, limit: number) => Promise<Dataset[]>;
     };
   }
 }

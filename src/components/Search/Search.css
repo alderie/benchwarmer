@@ -1,0 +1,106 @@
+.search-container {
+    display:flex;
+    flex-flow: column;
+    background-color: #161616;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    transition: border-color 0.2s ease-in-out;
+    overflow:hidden;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    overflow:hidden;
+}
+
+.search-input-group .icon {
+    width: 15px;
+    color: #696969;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.search-input-group .icon.icon-spin {
+    animation: spin 1s linear infinite;
+}
+
+.search-input {
+    padding: 0.6rem 0.2rem 0.6rem 0.4rem;
+    border:none;
+    background-color: #161616;
+    outline: none;
+    color: #f0f0f0;
+}
+
+.search-container.show-results .search-input-group {
+    border-bottom: solid 1px #313131;
+}
+
+.search-container:focus-within {
+    border-color: #6d6d6d;
+}
+
+
+.search-results {
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 4px;
+    background-color: #161616;
+    border: 1px solid #404040;
+    border-top: none;
+}
+
+.search-result-item {
+    border-radius: 2px;
+    color: #f0f0f0;
+    cursor: pointer;
+    margin: 4px;
+    border: solid 1px #2e2e2e; 
+    background-color: #222;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 0.8rem;
+}
+
+.search-result-item:hover {
+    background-color: #2e2e2e;
+}
+
+.search-result-item .source-tag {
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: #a4a4a4;
+    background-color: #393838;
+    padding: 4px 10px;
+    border-radius: 40px;
+}
+
+.search-result-item .search-result-name {
+    font-family: monospace;
+    font-size: 0.7rem;
+}
+
+.search-result-item .item-header {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.search-result-item .item-description {
+    padding: 5px;
+    background-color: #222;
+    color: #b0b0b0;
+}

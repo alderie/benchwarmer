@@ -17,7 +17,7 @@ body {
   font-family: 'GeneralSansVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   margin: auto;
-  padding: 2rem;
+  padding: 1rem 1.5rem;
   background-color: #161616;
   position: absolute;
   left: 0;
@@ -37,75 +37,10 @@ body {
 
 .app-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 0rem 0 1rem 0.5rem;
-}
-.app-header h1 {
-  font-family: 'CrimsonProVariable', serif;
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.app-header .subtitle {
-  font-family: 'GeneralSansVariable', sans-serif;
-  font-size: 0.8rem;
-  color: #b0b0b0;
-}
-
-
-.benchmark-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.button-row {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.benchmark-group .file-info {
-  font-size: 0.8rem;
-  margin: 0 0 1rem 0;
-}
-
-.llm-providers {
-  margin-top: 0.5rem;
-}
-
-.llm-providers h3 {
-  font-family: 'GeneralSansVariable', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin: 0 0 0.5rem 0;
-  color: #f0f0f0;
-}
-
-.llm-providers ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.llm-providers li {
-  font-family: 'GeneralSansVariable', sans-serif;
-  font-size: 0.8rem;
-  color: #b0b0b0;
-  margin-bottom: 0.25rem;
-}
-
-
-.app-content {
-  flex-grow: 1;
-  padding: 0.5rem;
-  border: solid 1px #404040;
-  border-radius: 8px;
-}
-.app-splash {
-  flex-grow: 1;
-  height: 100%;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.app-logo {
+  width: 20px;
 }

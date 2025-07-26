@@ -79,6 +79,7 @@ class HuggingFaceDownloader {
             console.log(`Downloading dataset: ${datasetId}`);
 
             const files = await this.getDatasetFiles(datasetId);
+            console.log("files to download ", files);
             const downloadedFiles: DownloadedFile[] = [];
 
             for (const file of files) {
@@ -198,3 +199,8 @@ export class BenchmarkDataManager {
         return data.slice(0, sampleSize);
     }
 }
+
+(async() => {
+    const manager = new BenchmarkDataManager();
+    await manager.downloadGSM8K();
+})()
