@@ -104,3 +104,15 @@
     background-color: #222;
     color: #b0b0b0;
 }
+
+.search-selected-item {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    overflow:hidden;
+}
+.selected-item-name {
+    margin: 0 10px;
+}
