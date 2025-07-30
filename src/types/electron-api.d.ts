@@ -3,6 +3,12 @@ import type { ModelData } from "../constants/models";
 
 export {};
 
+export type ModelData = {
+  id: string;
+  name: string;
+  provider: string;
+};
+
 export interface FileData {
     path: string | null;
     name: string | null;
@@ -12,7 +18,7 @@ export interface FileData {
 declare global {
   interface Window {
     electronAPI: {
-      getSupportedModelsSync: () => ModelData;
+      getSupportedModelsSync: () => ModelData[];
       openFile: () => Promise<FileData | null>;
       searchDatasets: (query: string, limit: number) => Promise<Dataset[]>;
     };

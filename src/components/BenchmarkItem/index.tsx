@@ -4,6 +4,7 @@ import './BenchmarkItem.css';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 import { DownloadIcon, Pause } from 'lucide-react';
+import { AddModelsModal } from '../AddModelsModal';
 
 import openaiIcon from '../../assets/icons/openai.png';
 import anthropicIcon from '../../assets/icons/anthropic.png';
@@ -82,12 +83,21 @@ export const BenchmarkItem = ({
         provider: 'openai',
     }]); // Placeholder for models, replace with actual model data
 
+    const [isAddModelsModalOpen, setIsAddModelsModalOpen] = useState(false);
+
+    const handleAddModels = (newModels: Model[]) => {
+        // Add new models to the existing list, avoiding duplicates
+        const existingIds = new Set(models.map(m => m.id));
+        const uniqueNewModels = newModels.filter(m => !existingIds.has(m.id));
+        setModels(prev => [...prev, ...uniqueNewModels]);
+    };
+
 
     return (
         <div className="benchmark-item">
             <div className='benchmark-controls'>
                 <Button onClick={() => {}}>Start</Button>
-                <Button onClick={() => {}} style={{ marginLeft: '0.5rem' }} variant='flat'>Add Models</Button>
+                <Button onClick={() => setIsAddModelsModalOpen(true)} style={{ marginLeft: '0.5rem' }} variant='flat'>Add Models</Button>
                 <div className='dataset-info' style={{ marginLeft: 'auto' }}>
                     <IconButton icon={DownloadIcon} onClick={() => {}} className='download-dataset-button' />
                     <span className='dataset-name'>{benchmark.dataset?.name}</span>
@@ -113,6 +123,12 @@ export const BenchmarkItem = ({
                     </div>
                 ))}
             </div>
+            
+            <AddModelsModal 
+                isOpen={isAddModelsModalOpen}
+                onClose={() => setIsAddModelsModalOpen(false)}
+                onAddModels={handleAddModels}
+            />
         </div>
     );
 }
