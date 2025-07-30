@@ -1,0 +1,194 @@
+{
+    "models": [
+        {
+            "id": "o1",
+            "name": "o1",
+            "provider": "openai"
+        },
+        {
+            "id": "o1-2024-12-17",
+            "name": "o1-2024-12-17",
+            "provider": "openai"
+        },
+        {
+            "id": "o1-mini",
+            "name": "o1-mini",
+            "provider": "openai"
+        },
+        {
+            "id": "o1-mini-2024-09-12",
+            "name": "o1-mini-2024-09-12",
+            "provider": "openai"
+        },
+        {
+            "id": "o1-preview",
+            "name": "o1-preview",
+            "provider": "openai"
+        },
+        {
+            "id": "o1-preview-2024-09-12",
+            "name": "o1-preview-2024-09-12",
+            "provider": "openai"
+        },
+        {
+            "id": "o3-mini",
+            "name": "o3-mini",
+            "provider": "openai"
+        },
+        {
+            "id": "o3-mini-2025-01-31",
+            "name": "o3-mini-2025-01-31",
+            "provider": "openai"
+        },
+        {
+            "id": "o3",
+            "name": "o3",
+            "provider": "openai"
+        },
+        {
+            "id": "o3-2025-04-16",
+            "name": "o3-2025-04-16",
+            "provider": "openai"
+        },
+        {
+            "id": "o4-mini",
+            "name": "o4-mini",
+            "provider": "openai"
+        },
+        {
+            "id": "o4-mini-2025-04-16",
+            "name": "o4-mini-2025-04-16",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.1",
+            "name": "gpt-4.1",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.1-2025-04-14",
+            "name": "gpt-4.1-2025-04-14",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.1-mini",
+            "name": "gpt-4.1-mini",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.1-mini-2025-04-14",
+            "name": "gpt-4.1-mini-2025-04-14",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.1-nano",
+            "name": "gpt-4.1-nano",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.1-nano-2025-04-14",
+            "name": "gpt-4.1-nano-2025-04-14",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o",
+            "name": "gpt-4o",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-2024-05-13",
+            "name": "gpt-4o-2024-05-13",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-2024-08-06",
+            "name": "gpt-4o-2024-08-06",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-2024-11-20",
+            "name": "gpt-4o-2024-11-20",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-audio-preview",
+            "name": "gpt-4o-audio-preview",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-audio-preview-2024-10-01",
+            "name": "gpt-4o-audio-preview-2024-10-01",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-audio-preview-2024-12-17",
+            "name": "gpt-4o-audio-preview-2024-12-17",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-search-preview",
+            "name": "gpt-4o-search-preview",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-search-preview-2025-03-11",
+            "name": "gpt-4o-search-preview-2025-03-11",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-mini-search-preview",
+            "name": "gpt-4o-mini-search-preview",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-mini-search-preview-2025-03-11",
+            "name": "gpt-4o-mini-search-preview-2025-03-11",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-mini",
+            "name": "gpt-4o-mini",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4o-mini-2024-07-18",
+            "name": "gpt-4o-mini-2024-07-18",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4-turbo",
+            "name": "gpt-4-turbo",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4-turbo-2024-04-09",
+            "name": "gpt-4-turbo-2024-04-09",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.5-preview",
+            "name": "gpt-4.5-preview",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-4.5-preview-2025-02-27",
+            "name": "gpt-4.5-preview-2025-02-27",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-3.5-turbo",
+            "name": "gpt-3.5-turbo",
+            "provider": "openai"
+        },
+        {
+            "id": "gpt-3.5-turbo-0125",
+            "name": "gpt-3.5-turbo-0125",
+            "provider": "openai"
+        },
+        {
+            "id": "chatgpt-4o-latest",
+            "name": "chatgpt-4o-latest",
+            "provider": "openai"
+        }
+    ]
+}

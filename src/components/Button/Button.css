@@ -48,6 +48,31 @@
     opacity: 0.6;
 }
 
+.button.flat {
+    background-color: transparent;
+    background-image: none;
+    border-color: rgb(55, 55, 55);
+    box-shadow: none;
+    color: #ffffff;
+}
+.button.flat:hover {
+    background-color: rgba(55, 55, 55, 0.1);
+    background-image: none;
+}
+.button.flat:active {
+    background-color: rgba(55, 55, 55, 0.2);
+    background-image: none;
+    box-shadow: none;
+}
+.button.flat:disabled {
+    background-color: transparent;
+    background-image: none;
+    border-color: rgba(55, 55, 55, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
 .button .subtext {
     font-size: 0.7rem;
     margin-left: 5px;

@@ -1,0 +1,87 @@
+.benchmark-item {
+    background-color: #262626;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.benchmark-controls {
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.benchmark-header {
+    display: flex;
+    font-size: 0.875rem;
+}
+
+.dataset-info {
+    display:flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background-color: #1f1f1f;
+    border: 1px solid #404040;
+}
+
+.dataset-info .dataset-name {
+    margin: 0rem 0.5rem;
+    font-weight: 500;
+    color: #9a9a9a;
+    user-select: none;
+    transition: all 0.1s ease-in-out;
+}
+.dataset-info .dataset-name:hover {
+    color: #ffffff;
+    cursor:pointer;
+}
+
+.download-dataset-button {
+    margin: 0;
+}
+
+.model-list {
+    padding: 0.2rem;
+    background-color:#1f1f1f;
+}
+
+.model-item {
+    display: flex;
+    align-items: center;
+    padding: 0.1rem;
+    border: 1px solid #303030;
+    border-radius: 4px;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    font-size: 0.8rem;
+}
+
+.model-data-chip {
+    display:flex;
+    align-items: center;
+    min-height: 24px;
+    background-color: #262626;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    margin: 0.2rem;
+}
+
+.model-provider-icon {
+    width: 17px;
+    height: 17px;
+}
+
+.model-name {
+    margin-left: 0.5rem;
+    font-weight: 500;
+    color: #9a9a9a;
+}
+
+.model-completed-items {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #b0b0b0;
+}

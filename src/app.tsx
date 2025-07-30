@@ -3,11 +3,21 @@ import { Button } from './components/Button';
 import { useState } from 'react';
 import Logo from './assets/icons/logo.svg';
 import { BenchmarkData, BenchmarkModal } from './components/BenchmarkModal';
+import { BenchmarkItem } from './components/BenchmarkItem';
 
 const App = () => {
 
-    const [benchmarks, setBenchmarks] = useState<BenchmarkData[]>([]);
-    const [showBenchmarkModal, setShowBenchmarkModal] = useState(true);
+    const [benchmarks, setBenchmarks] = useState<BenchmarkData[]>([{
+        name: 'Example Benchmark',
+        description: 'This is an example benchmark to demonstrate the UI.',
+        dataset: {
+            id: 'example-dataset',
+            name: 'openai/gmsk8',
+            description: 'An example dataset for testing purposes.',
+            url: 'https://example.com/dataset'
+        }
+    }]);
+    const [showBenchmarkModal, setShowBenchmarkModal] = useState(false);
 
     return (
         <div className='app-container'>
@@ -18,11 +28,7 @@ const App = () => {
             <div className='app-content'>
                 <div className='benchmarks-list'>
                     {benchmarks.length > 0 ? benchmarks.map((benchmark, index) => (
-                        <div key={index} className='benchmark-item'>
-                            <h3>{benchmark.name}</h3>
-                            <p>{benchmark.description}</p>
-                            <span>Dataset: {benchmark.dataset ? benchmark.dataset.name : 'None'}</span>
-                        </div>
+                        <BenchmarkItem key={index} benchmark={benchmark} />
                     )) : (
                         <p className='splash-content'>
                             <h1>No benchmarks added yet.</h1>
