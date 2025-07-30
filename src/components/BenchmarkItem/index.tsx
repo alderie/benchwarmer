@@ -13,6 +13,7 @@ import groqIcon from '../../assets/icons/groq.png';
 import cohereIcon from '../../assets/icons/cohere-color.png';
 import ollamaIcon from '../../assets/icons/ollama.png';
 import metaIcon from '../../assets/icons/meta-color.png';
+import { Tooltip } from '../Tooltip';
 
 type Model = {
     id: string;

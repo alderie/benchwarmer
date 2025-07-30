@@ -7,17 +7,25 @@
 .models-list-container {
     display: flex;
     flex-direction: column;
-    background-color: #1f1f1f;
-    border-radius: 4px;
+    background-color: #161616;
     border: 1px solid #404040;
+    border-radius: 4px;
+    transition: border-color 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+.models-list-container:focus-within {
+    border-color: #6d6d6d;
 }
 
 .model-search-input {
     padding: 0.6rem 0.2rem 0.6rem 0.4rem;
-    border:none;
+    border: none;
     background-color: #161616;
     outline: none;
     color: #f0f0f0;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
 }
 
 .models-list {
@@ -39,12 +47,13 @@
 }
 
 .models-list-header {
-    padding: 0.5rem 0.5rem;
-    display:flex;
+    display: flex;
     align-items: center;
-    border-bottom: solid 1px #2c2c2c;
-    background-color: #161616;
-    border-radius: 4px;
+    padding: 0;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.8rem;
+    overflow: hidden;
+    border-bottom: solid 1px #313131;
 }
 
 .models-list-header .icon {

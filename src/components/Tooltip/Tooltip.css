@@ -1,0 +1,103 @@
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-portal {
+    position: absolute;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+}
+
+.tooltip-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-content {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-family: 'GeneralSansVariable', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    white-space: nowrap;
+    border: 1px solid #404040;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #2a2a2a;
+    border: 1px solid #404040;
+    transform: rotate(45deg);
+}
+
+/* Position adjustments for portal */
+.tooltip-top {
+    transform: translateX(-50%);
+}
+
+.tooltip-arrow-top {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    margin-top: -4px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.tooltip-bottom {
+    transform: translateX(-50%);
+}
+
+.tooltip-arrow-bottom {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    margin-bottom: -4px;
+    border-top: none;
+    border-left: none;
+}
+
+.tooltip-left {
+    transform: translateX(-100%) translateY(-50%);
+}
+
+.tooltip-arrow-left {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    margin-left: -4px;
+    border-bottom: none;
+    border-left: none;
+}
+
+.tooltip-right {
+    transform: translateY(-50%);
+}
+
+.tooltip-arrow-right {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    margin-right: -4px;
+    border-top: none;
+    border-right: none;
+}
+
+/* Responsive behavior - prevent tooltips from going off-screen */
+@media (max-width: 768px) {
+    .tooltip-content {
+        max-width: 200px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+}

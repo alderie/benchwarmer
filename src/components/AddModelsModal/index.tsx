@@ -60,7 +60,7 @@ export const AddModelsModal = ({
             return;
         }
 
-        const filteredModels = availableModels.filter(model =>
+        const filteredModels = allModels.filter(model =>
             model.name.toLowerCase().includes(query.toLowerCase()) ||
             model.provider.toLowerCase().includes(query.toLowerCase())
         );
